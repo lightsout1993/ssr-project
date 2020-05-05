@@ -4,7 +4,7 @@ module.exports = ({ resolve = {} } = {}) => ({
   resolve: {
     ...resolve,
 
-    alias: { ...resolve && resolve.alias && resolve.alias, ...alias },
+    alias: { ...resolve && resolve.alias, ...alias },
     modules: ['node_modules'],
     extensions: ['.js', '.jsx'],
   },
