@@ -1,9 +1,11 @@
 const alias = require('./aliases.config');
 
-module.exports = {
+module.exports = (config) => ({
   resolve: {
-    alias,
+    ...config.resolve,
+
+    alias: { ...config.resolve.alias, ...alias },
     modules: ['node_modules'],
     extensions: ['.js', '.jsx'],
   },
-};
+});
